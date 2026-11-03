@@ -29,4 +29,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Relasi ke model Todo (Satu User bisa punya banyak Todo)
+     */
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
 }
